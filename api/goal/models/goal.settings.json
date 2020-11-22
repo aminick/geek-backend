@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "goals",
+  "info": {
+    "name": "goal"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "geek": {
+      "type": "decimal"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "assignee": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "goals"
+    },
+    "closedAt": {
+      "type": "date"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "blog",
+        "normal"
+      ],
+      "default": "normal"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "requesting",
+        "active",
+        "closed",
+        "auditing",
+        "rejected",
+        "ongoing"
+      ],
+      "default": "active"
+    },
+    "createdBy": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "createdGoals"
+    }
+  }
+}
