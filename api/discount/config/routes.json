@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/discount_code",
+      "handler": "discount.index",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

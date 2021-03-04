@@ -24,7 +24,7 @@ const getMyGoal = async (user, goalId) => {
 
 const getFullUser = async ({ email }) => {
   const user = await strapi.plugins["users-permissions"].services.user.fetch({
-    email: "k.hu@aftership.com",
+    email: email,
   });
   return user;
 };
